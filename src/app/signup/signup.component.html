@@ -1,0 +1,148 @@
+<!--<div id="login">
+
+    <div class="container">
+      
+     
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+              <br>
+        <div style="text-align: right;">
+          <button type="submit"class="btn btn-warning" value="login" routerLink="/login" routerLinkActive="active">Login</button>
+        </div>
+            <form [formGroup]="signup_form" (ngSubmit)="signup()" id="signup-form" class="form" action="" method="post">
+              <h3 class="text-center text-info style=color:red">Signup</h3>
+              <div class="form-group">
+                <label for="name" class="text-info">Name:</label><br>
+                <input type="text" formControlName="name" name="name" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="email" class="text-info">Email:</label><br>
+                <input type="text" formControlName="email" name="email" id="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="phone" class="text-info">Phone No:</label><br>
+                <input type="number" formControlName="phone" name="phone" id="phone" class="form-control">
+              </div>
+              <div class="form-group ">
+                <label for="empid" class="text-info">Employee ID:</label><br>
+                <input type="text" formControlName="empid" name="empid" id="empid" class="form-control">
+              </div>
+              <div class="form-group ">
+                <label for="pwd" class="text-warning">Password:</label><br>
+                <input type="password" formControlName="password" name="password" id="password" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="roles" class="text-info">Roles:</label><br>
+                <input type="text" formControlName="roles" name="roles" id="roles" class="form-control">
+              </div>
+           
+              <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+ 
+                 
+                 
+ 
+
+<h2 style="color:red"><u>Signup Form</u></h2>
+<div style="text-align: right;">
+<button type="submit" class="btn btn-success" value="login" routerLink="/login" routerLinkActive="active"> Login
+</button></div>
+
+
+<form action="/action_page.php" [formGroup]="signup_form" (ngSubmit)="signup()">
+    <label for="name">Name:</label>
+    <input type="text" id="fname" formControlNmae="name" name="fname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlNmae="email" name="email"><br><br>
+    <label for="phone">Phone No:</label>
+    <input type="phone" id="phone" formControlNmae="phone" name="phone"><br><br>
+    <label for="empid">Employee ID:</label>
+    <input type="empid" id="empid" formControlNmae="empid" name="empid"><br><br>
+    <label for="pwd">Passwoed:</label>
+    <input type="pwd" id="pwd" formControlNmae="pwd" name="pwd"><br><br>
+    <label for="adress">Adress:</label>
+    <input type="adress" id="adress" formControlNmae="adress" name="adress"><br><br>
+    <label for="roles">Roles:</label>
+    <input type="roles" id="roles" formControlNmae="roles" name="roles"><br><br>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+   -->
+
+ <main class="my-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+                  <div class="card">
+                    <div style="text-align: center;">
+                      <div class="card-header"><h4 style="color: blue;">Signup</h4><hr>
+                      <div class="card-body">
+                        <div style="text-align: right;">
+                          <button type="submit"class="btn btn-warning" value="login" routerLink="/login" routerLinkActive="active">Login</button>
+                        </div>
+                          <form [formGroup]="signup_form" (ngSubmit)="signup()" id="signup-form" name="my-form" >
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right"><h6>Name</h6></label>
+                                  <div class="col-md-6">
+                                      <input type="text" id="name" formControlName="name"class="form-control" name="name" placeholder="Enter Your Name">
+                                      
+                                    </div>
+                                  
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="email" class="col-md-4 col-form-label text-md-right"><h6>E-Mail</h6></label>
+                                  <div class="col-md-6">
+                                      <input type="text" id="email" formControlName="email" class="form-control" name="email-address" placeholder="Enter Your E-Mail">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="phone" class="col-md-4 col-form-label text-md-right"><h6>Phone Number</h6></label>
+                              
+                                  <div class="col-md-6">
+                                    
+                                      <input type="number" id="phone" formControlName="phone" class="form-control" placeholder="Enter Your Phone Number">
+                                    
+                                
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="empid" class="col-md-4 col-form-label text-md-right"><h6>Emplyee ID</h6></label>
+                                <div class="col-md-6">
+                                    <input type="number" id="empid" formControlName="empid" class="form-control" name="username" placeholder="Enter Your Emplyee ID">
+                                </div>
+                            </div>
+
+                              <div class="form-group row">
+                                  <label for="password" class="col-md-4 col-form-label text-md-right"><h6>Password</h6></label>
+                                  <div class="col-md-6">
+                                      <input type="password" id="password" formControlName="password" class="form-control" name="password" placeholder="Enter Your Password">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="address" class="col-md-4 col-form-label text-md-right"><h6> Address</h6></label>
+                                  <div class="col-md-6">
+                                      <input type="text" id="address" formControlName="address" class="form-control" name="address" placeholder="Enter Your Address">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="roles" class="col-md-4 col-form-label text-md-right">
+                                            <h6> Roles</h6></label>
+                                  <div class="col-md-6">
+                                      <input type="text" id="roles" formControlName="roles" class="form-control" name="roles" placeholder="Enter Your Roles">
+                                  </div>
+                              </div>
+
+                                  <div class="col-md-6 offset-md-3">
+                                      <button type="submit" class="btn btn-success">
+                                     Submit
+                                      </button>

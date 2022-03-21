@@ -1,0 +1,184 @@
+<!--<div class="header">
+  <a href="#default" class="logo" style="color:blue;">HR TOOLS</a>
+  <div class="header-right">
+    <a href="#home">Home</a>
+    <a href="#signup" value="signup" routerLink="/signup" routerLinkActive="active">Signup</a>
+    <a href="#profile" value="profile" routerLink="/attendance" routerLinkActive="active">Attendance</a>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+    <button class="btn btn-primary" type="submit">Create</button>
+    
+  
+  </form>
+</nav>
+<div style="padding-left:20px">
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="">Employee ID</th>
+      <th class="">Name</th>
+      <th class="">Email ID</th>
+      <th class="">Created Date</th>
+      <th class="">Status</th>
+      <th class="">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of test; let i = index">
+
+      <td (click)="data(item.empid)">{{item.empid}}</td>
+      <td (click)="data(item.name)">{{item.name}}</td>
+      <td (click)="data(item.email)">{{item.email}}</td>
+      <td (click)="data(item.createdate)">{{item.createdate}}</td>
+      <td (click)="data(item.status)">{{item.status}}</td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-info">Action</button>
+          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" routerLink="/empdetails" routerLinkActive="active">View</a>
+            <a class="dropdown-item  myFunction() ">Delete</a>
+            <a class="dropdown-item" href="#">Update</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<footer class="footer-distributed fixed bottom">
+  <div class="footer-left">
+
+
+<h3 style="color:rgba(240, 248, 255, 0.705)">Vishishtah Company</h3>
+      </div>
+
+<div class="footer-right">
+
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-twitter"></i></a>
+<a href="#"><i class="fa fa-linkedin"></i></a>
+<a href="#"><i class="fa fa-github"></i></a>
+
+</div>
+
+<div class="footer-left">
+
+<p class="footer-links">
+<a class="link-1" href="#">Home</a>
+
+<a href="#">Blog</a>
+
+<a href="#">Pricing</a>
+
+<a href="#">About</a>
+
+<a href="#">Faq</a>
+
+<a href="#">Contact</a>
+</p>
+
+<p>Vishishtah&copy; 2021</p>
+</div>
+
+</footer> -->
+<div class="header">
+  <a href="#default" class="logo" style="color:blue;">HR TOOLS</a>
+  <div class="header-right">
+    <a href="#home">Home</a>
+    <a href="#signup" value="signup" routerLink="/signup" routerLinkActive="active">Signup</a>
+    <a href="#profile" value="profile" routerLink="/attendance" routerLinkActive="active">Attendance</a>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+    <button class="btn btn-primary" type="submit">Create</button>
+    
+  
+  </form>
+</nav>
+<div style="padding-left:20px">
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="">Employee ID</th>
+      <th class="">Name</th>
+      <th class="">Email ID</th>
+      <th class="">Created Date</th>
+      <th class="">Status</th>
+      <th class="">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of test; let i = index">
+
+
+      <td (click)="data(item.empid)">{{item.empid}}</td>
+      <td (click)="data(item.name)">{{item.name}}</td>
+      <td (click)="data(item.email)">{{item.email}}</td>
+      <td (click)="data(item.createdate)">{{item.createdate}}</td>
+      <td (click)="data(item.status)">{{item.status}}</td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-info">Action</button>
+          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" routerLink="/empdetails" routerLinkActive="active">View</a>
+            <a class="dropdown-item" (click)=delete(i)>Delete</a>
+            
+            <a class="dropdown-item" href="#">Update</a>
+            
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<footer class="footer-distributed fixed bottom">
+  <div class="footer-left">
+
+
+<h3 style="color:rgba(240, 248, 255, 0.705)">Vishishtah Company</h3>
+      </div>
+
+<div class="footer-right">
+
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-twitter"></i></a>
+<a href="#"><i class="fa fa-linkedin"></i></a>
+<a href="#"><i class="fa fa-github"></i></a>
+
+</div>
+
+<div class="footer-left">
+
+<p class="footer-links">
+<a class="link-1" href="#">Home</a>
+
+<a href="#">Blog</a>
+
+<a href="#">Pricing</a>
+
+<a href="#">About</a>
+
+<a href="#">Faq</a>
+
+<a href="#">Contact</a>
+</p>
+
+<p>Vishishtah&copy; 2021</p>
+</div>
+
+</footer>
+

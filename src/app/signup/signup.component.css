@@ -1,0 +1,61 @@
+/*body {
+    margin: 0;
+    padding: 0;
+    background-color: #17a3b88f;
+    height: 100vh;
+  }
+  #login .container #login-row #login-column #login-box {
+    margin-top: 150px;
+    max-width: 600px;
+    height: 620px;
+    border: 1px solid #9c9c9cbd;
+    background-color: #eaeaea86;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 30px;
+    color:black;
+
+  
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -60px;
+    color:black;
+  }*/
+  @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+
+  body{
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: powderblue;
+      text-align: left;
+      background-color: #f5f8fa;
+  }
+  
+  
+  
+  .my-form
+  {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+  }
+  
+  .my-form .row
+  {
+      margin-left: 0;
+      margin-right: 0;
+  }
+  
+  .login-form
+  {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+  }
+  
+  .login-form .row
+  {
+      margin-left: 0;
+      margin-right: 0;
+  }

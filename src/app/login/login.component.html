@@ -1,0 +1,59 @@
+
+      <section class="form">
+   <div class="container login-container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="./assets/image/hr3.jpg" alt="hr" width="560px"height="500px">
+        </div>   
+         <div class="col-md-6 login-form-2">
+            <div class="test">
+                <h3>Login</h3>
+                <form [formGroup]="login_form" (ngSubmit)="login()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Username"
+                            value="" />
+                    </div><br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <button type="submit"  class="btn btn-warning">Login</button>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: right;">
+    <h5> If you don't have account <a href="#" class="click" value="signup" routerLink="/signup" routerLinkActive="active">click</a> here to signup.</h5>
+  </div>
+  <!--
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-2">
+            <div class="test">
+                <h3>Login</h3>
+                <form [formGroup]="login_form" (ngSubmit)="login()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Username"
+                            value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="pwd" placeholder="Password"
+                            value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h5> If you don't have account <a href="#" class="click" value="signup" routerLink="/signup"
+            routerLinkActive="active">click</a> here to signup.</h5>
+</div>
+-->

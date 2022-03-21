@@ -1,0 +1,407 @@
+<div class="header">
+  <a href="#default" class="logo" style="color:blue;">HR TOOLS</a>
+  <div class="header-right">
+    <a href="#home">Home</a>
+    <a href="#signup" value="signup" routerLink="/signup" routerLinkActive="active">Signup</a>
+    <a href="#profile" value="profile" routerLink="/attendance" routerLinkActive="active">Attendance</a>
+  </div>
+</div>
+<main class="my-form">
+  <div class="cotainer">
+    <h3 style="color:green; text-align: center;"><u>Leave Details</u></h3>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card-body">
+          <form name="my-form" action="success.php" method="">
+            <div class="form-group row">
+              <label for="total" class="col-md-1 col-form-label text-md-right"  >
+                <h6>Total Leaves</h6>
+              </label>
+              <div class="col-md-4">
+                <input type="number" id="total" class="form-control" name="total">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="balance" class="col-md-1 col-form-label text-md-right" >
+                <h6>Balance Leaves</h6>
+              </label>
+              <div class="col-md-4">
+                <input type="number" id="balance" class="form-control" name="balance">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="used" class="col-md-1 col-form-label text-md-right">
+                <h6>Used Leaves</h6>
+              </label>
+              <div class="col-md-4">
+                <input type="number" id="used" class="form-control" name="used">
+              </div>
+            </div>
+            <div class="container">
+              <button type="button" class="btn btn-danger">Log</button><br><br>
+              <a href="#demo" class="btn btn-warning" data-toggle="collapse">Pendding</a>
+              <div id="demo" class="collapse">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="">Leave Type</th>
+                      <th class="">Starting </th>
+                      <th class="">Ending</th>
+                      <th class="">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of test;">
+                      <td>{{item.leavetype}}</td>
+                      <td>{{item.starting}}</td>
+                      <td>{{item.ending}}</td>
+                      <td>{{item.status}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br>
+            <div class="container">
+              <a href="#demo1" class="btn btn-success" data-toggle="collapse">Approved</a>
+              <div id="demo1" class="collapse">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="">Leave Type</th>
+                      <th class="">Starting </th>
+                      <th class="">Ending</th>
+                      <th class="">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of test1;">
+                      <td>{{item.leavetype}}</td>
+                      <td>{{item.starting}}</td>
+                      <td>{{item.ending}}</td>
+                      <td>{{item.status}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Apply For Leave
+        </button>
+      </div>
+
+      <div style="text-align: right;">
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+
+
+              <div class="modal-header">
+                <h4 class="modal-title"> Apply For Leave</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <div class="cotainer">
+
+                <div class="row">
+                  <div class="col-md-4">
+
+                    <div class="card-body">
+                      <div class="modal-body">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Leave Type</button>
+                          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown"> </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Casual Leave</a>
+                            <a class="dropdown-item" href="#">Sick Leave</a>
+                            <a class="dropdown-item" href="#">Comp Off</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="container">
+                    <form class="form-inline" action="/action_page.php">
+                      <label for="number"> Start Date:</label>
+                      <input type="number" class="form-control" id="number" name="number"><br><br>
+                      <label for="number"> End Date:</label>
+                      <input type="number" class="form-control" id="number" name="number"><br><br><br><br>
+                      <textarea id="w3review" name="w3review" rows="7" cols="80" placeholder="Reason text"></textarea>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancle</button>
+
+                        <button type="button" class="btn btn-success">Submit</button>
+                      </div>
+                    </form>
+                  </div> -->
+                  <div class="container">
+                    <form [formGroup]="leave_form" (ngSubmit)="submit()">
+                      <label for="date"> Start Date:</label>
+                      <input type="date" class="form-control" formControlName="starting" id="date" name="number"><br><br>
+                      <label for="date"> End Date:</label>
+                      <input type="date" class="form-control"  formControlName="ending" id="number" name="number"><br><br><br><br>
+                      <textarea id="w3review" name="w3review" rows="7" cols="80" placeholder="Reason text"></textarea>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancle</button>
+
+                        <button type="submit" class="btn btn-success">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: left;">
+      <button type="submit" class="btn btn-primary" value="empdashboard" routerLink="/empdashboard"
+        routerLinkActive="active">Back</button>
+    </div>
+
+    <footer class="footer-distributed fixed bottom">
+      <div class="footer-left">
+
+
+        <h3 style="color:rgba(240, 248, 255, 0.705)">Vishishtah Company</h3>
+      </div>
+
+      <div class="footer-right">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+      <div class="footer-left">
+
+        <p class="footer-links">
+          <a class="link-1" href="#">Home</a>
+
+          <a href="#">Blog</a>
+
+          <a href="#">Pricing</a>
+
+          <a href="#">About</a>
+
+          <a href="#">Faq</a>
+
+          <a href="#">Contact</a>
+        </p>
+
+        <p>Vishishtah&copy; 2021</p>
+
+
+
+
+
+        <!---
+<div class="header">
+  <a href="#default" class="logo" style="color:blue;">HR TOOLS</a>
+  <div class="header-right">
+    <a href="#home">Home</a>
+    <a href="#signup" value="signup" routerLink="/signup" routerLinkActive="active">Signup</a>
+    <a href="#profile" value="profile" routerLink="/attendance" routerLinkActive="active">Attendance</a>
+  </div>
+</div>
+<main class="my-form">
+  <div class="cotainer">
+    <h3 style="color:red; text-align: center;"><u>Leave Details</u></h3>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card-body">
+          <form name="my-form" action="success.php" method="">
+            <div class="form-group row">
+              <label for="total" class="col-md-4 col-form-label text-md-right">Total Leaves</label>
+         
+                <input type="number" id="total" class="form-control" name="total">
+              </div>
+         
+
+            <div class="form-group row">
+              <label for="balance" class="col-md-4 col-form-label text-md-right">Balance Leaves</label>
+          
+                <input type="number" id="balance" class="form-control" name="balance">
+              </div>
+        
+
+            <div class="form-group row">
+              <label for="used" class="col-md-4 col-form-label text-md-right">Used Leaves</label>
+           
+                <input type="number" id="used" class="form-control" name="used">
+              </div>
+           </form>
+           </div>
+          
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              Pedding
+            </button>
+      
+
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+
+                 
+                  <div class="modal-header">
+                    <h4 class="modal-title">pedding</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+           
+                  <div class="modal-body">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th class="">Leave Type</th>
+                          <th class="">Starting </th>
+                          <th class="">Ending</th>
+                          <th class="">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of test;">
+                          <td>{{item.leavetype}}</td>
+                          <td>{{item.starting}}</td>
+                          <td>{{item.ending}}</td>
+                          <td>{{item.status}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br> <br>
+     
+       
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                Approved
+              </button>
+
+              <div class="modal fade" id="myModal1">
+                <div class="modal-dialog modal-md">
+                  <div class="modal-content">
+
+             
+                    <div class="modal-header">
+                      <h4 class="modal-title">Approved</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                 
+                    <div class="modal-body">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th class="">Leave Type</th>
+                            <th class="">Starting </th>
+                            <th class="">Ending</th>
+                            <th class="">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of test1;">
+                            <td>{{item.leavetype}}</td>
+                            <td>{{item.starting}}</td>
+                            <td>{{item.ending}}</td>
+                            <td>{{item.status}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="col-md-4">
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
+                  Apply For Leave
+                </button>
+
+              
+                <div class="modal fade" id="myModal2">
+                  <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+
+            
+                      <div class="modal-header">
+                        <h4 class="modal-title"> Apply For Leave</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+
+                      <div class="card-body">
+                        <div class="modal-body">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-primary">Leave Type</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                              data-toggle="dropdown">
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Casual Leave</a>
+                              <a class="dropdown-item" href="#">Sick Leave</a>
+                              <a class="dropdown-item" href="#">Comp Off</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container">
+                        <form class="form-inline" action="/action_page.php">
+                          <label for="number"> Start Date:</label>
+                          <input type="number" class="form-control" id="number" name="number"><br><br>
+                          <label for="number"> End Date:</label>
+                          <input type="number" class="form-control" id="number" name="number"><br><br><br><br>
+                          <textarea id="w3review" name="w3review" rows="7" cols="80"
+                            placeholder="Reason text"></textarea>
+                        </form>
+                      </div>
+                    
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancle</button>
+                        <button type="button" class="btn btn-success">Submit</button>
+
+                        <footer class="footer-distributed fixed bottom">
+                          <div class="footer-left">
+
+
+                            <h3 style="color:rgba(240, 248, 255, 0.705)">Vishishtah Company</h3>
+                          </div>
+
+                          <div class="footer-right">
+
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
+
+                          </div>
+
+                          <div class="footer-left">
+
+                            <p class="footer-links">
+                              <a class="link-1" href="#">Home</a>
+
+                              <a href="#">Blog</a>
+
+                              <a href="#">Pricing</a>
+
+                              <a href="#">About</a>
+
+                              <a href="#">Faq</a>
+
+                              <a href="#">Contact</a>
+                            </p>
+
+                            <p>Vishishtah&copy; 2021</p>
+                          -->
